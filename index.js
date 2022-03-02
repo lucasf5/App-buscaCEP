@@ -9,9 +9,13 @@ const localidade = document.querySelector(".localidade")
 const uf = document.querySelector(".uf")
 const ddd = document.querySelector(".ddd")
 const span = document.querySelector("span")
+const form = document.querySelector("form")
 
 
 div.addEventListener("change", () => {
+    form.addEventListener("keypress", (event) => {
+        event.preventDefault()
+    })
     const valor = div.value
     const js = fetch(`https://viacep.com.br/ws/${valor}/json/`)
     
