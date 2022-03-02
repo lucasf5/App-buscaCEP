@@ -14,7 +14,9 @@ const form = document.querySelector("form")
 
 div.addEventListener("change", () => {
     form.addEventListener("keypress", (event) => {
-        event.preventDefault()
+        if (event.key === "Enter") {
+            event.preventDefault()
+        }
     })
     const valor = div.value
     const js = fetch(`https://viacep.com.br/ws/${valor}/json/`)
